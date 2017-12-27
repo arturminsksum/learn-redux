@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
+
 import { createStore, combineReducers } from "redux";
 
 const todo = (state, action) => {
@@ -114,9 +115,9 @@ class FilterLink extends Component {
   }
 }
 
-// FilterLink.contextTypes = {
-//   store: React.PropTypes.object
-// };
+FilterLink.contextTypes = {
+  store: PropTypes.object
+};
 
 const Footer = () => (
   <p>
@@ -171,9 +172,9 @@ const AddTodo = (props, { store }) => {
   );
 };
 
-// AddTodo.contextTypes = {
-//   store: React.PropTypes.object
-// };
+AddTodo.contextTypes = {
+  store: PropTypes.object
+};
 
 const getVisibleTodos = (todos, filter) => {
   switch (filter) {
@@ -215,9 +216,9 @@ class VisibleTodoList extends Component {
   }
 }
 
-// VisibleTodoList.contextTypes = {
-//   store: React.PropTypes.object
-// };
+VisibleTodoList.contextTypes = {
+  store: PropTypes.object
+};
 
 let nextTodoId = 0;
 const TodoApp = () => (
@@ -240,7 +241,7 @@ class Provider extends Component {
 }
 
 Provider.childContextTypes = {
-  store: React.PropTypes.object
+  store: PropTypes.object
 };
 
 ReactDOM.render(
